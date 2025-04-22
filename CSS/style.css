@@ -1,0 +1,46 @@
+/* page Index */
+/* index backgroung*/
+.index {  
+    background-color: #B8DAEE
+}
+
+.formulaire{
+    background-color: #FFFF; 
+    color:#0000;
+    padding: 20px; /* Ajoute un peu d'espacement intérieur */ 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin: auto;
+    width: 90%;
+    margin-top: 10%;
+}
+
+/* Nav Bar */
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: center; 
+    padding: 2%;
+    background-color: #0F273B;
+    
+}
+
+.nav-item{
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+    align-items: center; 
+}
+
+.nav-link{
+    text-decoration: none; 
+    color: white;
+     
+}
+
+/* Logo*/
+.logo {
+    max-width: 40%; 
+    height: auto;
+}
