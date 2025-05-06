@@ -21,13 +21,13 @@
 
         <!--<form action="traitement_formulaire.php" method="post">-->
             <label for="Nom">Nom :</label>
-            <input type="text" id="Nom" name="Nom" ><br>
+            <input type="text" id="Nom" name="Nom" required><br>
     
             <label for="Prénom">Prénom :</label>
-            <input type="text" id="Prénom" name="Prénom" ><br>
+            <input type="text" id="Prénom" name="Prénom" required><br>
     
             <label for="email">Adresse mail :</label>
-            <input type="email" id="email" name="email"><br>
+            <input type="email" id="email" name="email" required><br>
 
                 <label for="role">Rôle :</label>
                     <select id="role" name="role" required>
@@ -39,15 +39,17 @@
                     </select>
                     <br>
 
-            <label for="Date_Naissance">Date de Naissance :</label>
-            <input type="dropdown" id="Date_Naissance" name="Date_Naissance"><br>
-            
-            
+            <label for="ddn">Date de Naissance :</label>
+            <input type="text" id="ddn" name="ddn" required><br>
 
             <label for="Adresse">Adresse Postal :</label>
-            <input type="text" id="Adresse" name="adresse"><br>
+            <input type="text" id="Adresse" name="adresse" required><br>
+
+            <label for="mdp">Mot de passe :</label>
+            <input type="text" id="mdp" name="mdp" required><br>
     
-            <button type="submit">Ajouter</button>
+            <button </button>
+            <a class href="../HTML/inscription_etudiant.html">Connexion</a> 
         </form>
     </body>
 </html>

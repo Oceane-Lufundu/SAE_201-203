@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <title>Accueil</title>
         <link rel="stylesheet" href="../CSS/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </head>
     <body class="index">
     <!-- nav bar -->
@@ -11,7 +13,7 @@
 
             <li class="nav-item-logo">
                     <img src="../Images/logo-univ.png" class="logo">
-                </a>    
+                  
             </li>
             
           <li class="nav-item">
@@ -20,34 +22,62 @@
         </ul>
 
         <!--<form action="traitement_formulaire.php" method="post">-->
-            <label for="Nom">Nom :</label>
-            <input type="text" id="Nom" name="Nom" ><br>
-    
-            <label for="Prénom">Prénom :</label>
-            <input type="text" id="Prénom" name="Prénom" ><br>
-    
-            <label for="email">Adresse mail :</label>
-            <input type="email" id="email" name="email"><br>
+        <form>
+            <div class="mb-3">
+                <label for="Nom">Nom :</label>
+                <input type="text" id="Nom" name="Nom" required><br>
+            </div>
+        
+            <div class="mb-3">    
+                <label for="Prénom">Prénom :</label>
+                <input type="text" id="Prénom" name="Prénom" required><br>
+            </div>
 
+            <div class="mb-3">
+                <label for="numero">N° Téléphone :</label>
+                <input type="text" id="numero" name="numero" required><br
+            </div>    
+                
                 <label for="role">Rôle :</label>
-                    <select id="role" name="role" required>
-                        <option value=""></option>
-                        <option value="Agent">Agent</option>
-                        <option value="Etudiant">Etudiant</option>
-                        <option value="Professeur">Professeur</option>
-                        <option value="admin">Administrateur</option>
-                    </select>
-                    <br>
-
-            <label for="Date_Naissance">Date de Naissance :</label>
-            <input type="dropdown" id="Date_Naissance" name="Date_Naissance"><br>
+                        <select id="role" name="role" required>
+                            <option value=""></option>
+                            <option value="Agent">Agent</option>
+                            <option value="Etudiant">Etudiant</option>
+                            <option value="Professeur">Professeur</option>
+                            <option value="admin">Administrateur</option>
+                        </select>
+                        <br>
             
-            
+                <label for="adresse">Adresse Postal :</label>
+                <input type="text" id="adresse" name="adresse" required><br> 
 
-            <label for="Adresse">Adresse Postal :</label>
-            <input type="text" id="Adresse" name="adresse"><br>
-    
-            <button type="submit">Ajouter</button>
+                <label for="netud">N° étudiant :</label>
+                <input type="text" id="netud" name="netud" required><br>
+
+                <label for="td">TD :</label>
+                <select id="td" name="td" required>
+                    <option value=""></option>
+                    <option value="TD1">TD1</option>
+                    <option value="TD2">TD2</option>
+                    <option value="TD3">TD3</option>
+                </select>
+                <br>
+
+                <label for="promo">Promo :</label>
+                <input type="text" id="promo" name="promo" required><br>
+
+                <label for="TP">TP :</label>
+                <select id="TP" name="TP" required>
+                    <option value=""></option>
+                    <option value="TPA">TPA</option>
+                    <option value="TPB">TPB</option>
+                    <option value="TPC">TPC</option>
+                    <option value="TPD">TPD</option>
+                    <option value="TPE">TPE</option>
+                    <option value="TPF">TPF</option>
+                </select><br>
+                
+            <button type="submit">Connexion</button>
         </form>
     </body>
 </html>
