@@ -13,7 +13,7 @@
             </li>
             
             <li id="text">
-                <h2>Ajout de nouveau matériel</h2>
+                <h1>Ajout de nouveau matériel</h1>
             </li>  
         </ul>
     <h2>Le matériel a été ajouté avec succès ! </h2>
