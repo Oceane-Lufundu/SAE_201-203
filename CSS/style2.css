@@ -1,7 +1,7 @@
 #nav {
 display: flex;
 align-items: center; /* Aligne verticalement au centre */
-background-color: white; 
+background-color: rgba(46,52,148,255); 
 padding: 10px;
 list-style: none; /* Supprime les puces */
 margin: 0;
