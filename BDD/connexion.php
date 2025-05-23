@@ -12,18 +12,23 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-if (isset($_POST['email'], $_POST['mot_de_passe'])) {
-    $email = $_POST['email'];
-    $mot_de_passe = $_POST['mot_de_passe'];
+// Vérification que les champs sont remplis
+if (!empty($_POST['Identifiant']) && !empty($_POST['mdp'])) {
+    $email = $_POST['Identifiant']; // Correspond maintenant au champ HTML
+    $mot_de_passe = $_POST['mdp'];  // Correspond maintenant au champ HTML
 
-    // Vérifier l'utilisateur
+    // Debug temporaire : Voir les données envoyées (à supprimer après test)
+    var_dump($_POST);
+
+    // Vérification de l'utilisateur dans la base de données
     $stmt = $pdo->prepare("SELECT id, mot_de_passe FROM utilisateurs WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 
+    // Vérification du mot de passe
     if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
         $_SESSION['user_id'] = $user['id'];  // Stocker l'ID en session
-        header("Location: dashboard.php");   // Redirection vers le dashboard
+        header("Location: ../HTML/dashboard.html");  // Redirection vers le dashboard
         exit();
     } else {
         echo "Identifiants incorrects.";
