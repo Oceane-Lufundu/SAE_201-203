@@ -41,6 +41,8 @@ if (
         $stmt->execute([$email, $mot_de_passe, $pseudo, $nom, $prenom, $date_naissance, $adresse_postale, $role]);
 
         echo "Inscription réussie !";
+        header("Location: index.php"); // redirection vers la page de connecion
+        exit();
     }
 } else {
     echo "Tous les champs sont obligatoires.";

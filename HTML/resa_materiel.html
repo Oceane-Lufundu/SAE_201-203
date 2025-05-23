@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Demande de réservation des salles</title>
+        <link rel="stylesheet" href="../CSS/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
+    </head>
+    <body class="index">
+    <!-- nav bar -->
+        <ul class="nav">
+
+            <li class="nav-item-logo">
+                    <img src="../images/LOGO_iut.png" class="logo">
+                </a>    
+  
+            </li>
+            
+          <li class="nav-item">
+            <a class="nav-link" href="../HTML/resa_salle.html">Demande de réservation des salles</a>
+          </li>  
+        </ul>
+
+      <div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Nom:</div>
+  <div class="col-6"><input type="text" id="nom" name="nom" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+      </div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Prénom:</div>
+  <div class="col-6"><input type="text" id="prenom" name="prenom" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Numéro de carte d'étudiant:</div>
+  <div class="col-6"><input type="text" id="numero" name="numero" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Adresse mail universitaire:</div>
+  <div class="col-6"><input type="text" id="adresse" name="adresse" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Date et heure de réservation:jj/mm/aaaa (à partir de 8h30)</div>
+  <div class="col-6"><input type="text" id="DHreser" name="DHreser" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Heure de remise des clés:(Jusqu'à 18h00 max)</div>
+  <div class="col-6"><input type="text" id="Hremise" name="Hremise" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Nom de Projet :</div>
+  <div class="col-6"><input type="text" id="Nprojet" name="Nprojet" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Enseignant responsable du Projet :</div>
+  <div class="col-6"><input type="text" id="enseignantRespon" name="enseignantRespon" class="form-control"style="border:1px solid;border-radius:0px;"></div>
+</div>
+
+     <!--Matériel souhaitée-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black " style="background:#D9D9D9;">Matériel souhaitée</div>
+<div class="col-1 border border-1 border-black" style="background:#D9D9D9;text-align: center;">Quantité souhaitée</div>
+<div class="col-1 border border-1 border-black" style="background:#D9D9D9;text-align: center;">Quantité disponible</div>
+<div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;">Référence du matériel attribué(à remplir par Fares Zaidi)</div>
+</div>
+        <!--Pc de bureau-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Pc de Bureau</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="pc_bureau_quantite" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">7</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+        <!--Casque-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Casque Oculus Quest 2 (+2 manettes et chargeur)</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="casque" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">2</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+        <!--Câble-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Câble oculus link (pour lier le casque au PC)</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">2</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+        <!--Camera-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Caméra 360° Ricoh Theta SCA</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">1</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+        <!--Trépied-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Trépied</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">2</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+     <!--Support-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Support smartphone pour le trépied</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">2</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+     <!--Tablette-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Tablette android samsung (pour la caméra 360°)</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">1</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+     <!--Webcam 4K logitech brio-->
+<div class="row g-0 mb-0">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Webcam 4K logitech brio</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">2</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+   <!--Micro-->
+<div class="row g-0 mb-3">
+  <div class="col-6 border border-1 border-black" style="background:#D9D9D9;">Microphone de gaming HYPERX QUADCAST</div>
+  <div class="col-1 border border-1 border-black" style="background:#D9D9D9;">
+    <input type="text" name="cable" class="form-control" style="border:1px solid;border-radius:0px;">
+  </div>
+  <div class="col-1 border border-1 border-black d-flex align-items-center justify-content-center" style="background:#D9D9D9;">1</div>
+  <div class="col-4 border border-1 border-black" style="background:#D9D9D9;text-align: center;"></div>
+</div>
+
+
+<div class="d-flex flex-column align-items-center">
+
+  <!-- Date -->
+  <div class="d-flex flex-column align-items-start mb-3">
+    <label for="date" class="mb-1">Date :</label>
+    <input type="text" id="date" name="date" class="form-control" 
+           style="border:1px solid; border-radius:0px; width: 420px;">
+  </div>
+
+  
+  <!-- Lieu -->
+  <div class="d-flex flex-column align-items-start mb-3">
+    <label for="date" class="mb-1">Lieu :</label>
+    <input type="text" id="lieu" name="lieu" class="form-control" 
+           style="border:1px solid; border-radius:0px; width: 420px;">
+  </div>
+
+
+  <!-- Signature -->
+  <div class="d-flex flex-column align-items-start mb-3">
+    <label for="signature" class="mb-1">Signature :</label>
+    <input type="text" id="signature" name="signature" class="form-control" 
+           style="border:1px solid; border-radius:0px; width: 420px;">
+  </div>
+
+</div>
+<P CLASS="Envoi">
+<button type="submit">Envoyer</button>
+</P>

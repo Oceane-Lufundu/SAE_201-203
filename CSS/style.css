@@ -1,16 +1,15 @@
 /* page Index */
-/* index backgroung*/
-.index {  
-    background-color: #B8DAEE
+/* index background */
+.index {
+    background-color: #B8DAEE;
 }
 
-.formulaire{
-    background-color: #FFFF; 
-    color:#0000;
-    padding: 20px; /* Ajoute un peu d'espacement intérieur */ 
-    border-radius: 5px; 
+.formulaire {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
     margin: auto;
     width: 90%;
     margin-top: 10%;
@@ -21,50 +20,64 @@
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     padding: 2%;
     background-color: #0F273B;
-    
 }
 
-.nav-item{
+.nav-item {
     text-align: center;
     margin: auto;
     font-size: 20px;
 }
 
-.nav-link{
-    text-decoration: none; 
-    color: white;
-}
-
 .nav-link {
+    text-decoration: none;
     color: white !important;
 }
 
-
-/* Logo*/
+/* Logo */
 .logo {
-    max-width: 200px; 
+    max-width: 200px;
     height: auto;
-}
-
-.logo{
     flex: 1;
     display: flex;
     justify-content: center;
 }
 
-
-/* Formulaire*/
-.form{
-    margin-top: auto;
+.Envoi{
+         margin-left:580px;
+          
 }
-.gap{
-    display: flex;
-    gap: 1px; /* Ajoute un espace entre les champs */
+/* Boîte du formulaire */
+.jpp {
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid;
+    padding: 35px;
+    width: 45%;
+    margin: 70px auto;
+    border-radius: 10px;
+    background-color: #FFFFFF;
 }
 
-.mb-3 {
-    flex: 1; /* Permet aux champs de prendre un espace équitable */
+/* Champs TD/TP cachés par défaut */
+.sous-role {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Bouton centré */
+.jpp button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.jpp button:hover {
+    background-color: #0056b3;
 }
