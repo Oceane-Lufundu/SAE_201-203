@@ -41,7 +41,7 @@ if (
         $stmt->execute([$email, $mot_de_passe, $pseudo, $nom, $prenom, $date_naissance, $adresse_postale, $role]);
 
         echo "Inscription réussie !";
-        header("Location: /..HTML/index.html"); // redirection vers la page de connecion
+        header("Location: ../HTML/index.html"); // redirection vers la page de connecion
         exit();
     }
 } else {

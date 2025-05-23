@@ -1,5 +1,5 @@
 <?php
-session_start();
+// Connexion à la base de données
 $host = "localhost";
 $dbname = "sae_203";
 $username = "root";
@@ -12,28 +12,59 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-// Vérification que les champs sont remplis
-if (!empty($_POST['Identifiant']) && !empty($_POST['mdp'])) {
-    $email = $_POST['Identifiant']; // Correspond maintenant au champ HTML
-    $mot_de_passe = $_POST['mdp'];  // Correspond maintenant au champ HTML
+// Vérifier que toutes les données du formulaire sont présentes
+if (
+    isset($_POST['email'], $_POST['pseudo'], $_POST['nom'], $_POST['prenom'],
+    $_POST['date_naissance'], $_POST['adresse_postale'], $_POST['role'], $_POST['mot_de_passe'])
+) {
+    $email = $_POST['email'];
+    $pseudo = $_POST['pseudo'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $date_naissance = $_POST['date_naissance'];
+    $adresse_postale = $_POST['adresse_postale'];
+    $role = $_POST['role'];
+    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hash du mot de passe
 
-    // Debug temporaire : Voir les données envoyées (à supprimer après test)
-    var_dump($_POST);
+    // Vérifier si l'email existe déjà
+    $check = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = ?");
+    $check->execute([$email]);
 
-    // Vérification de l'utilisateur dans la base de données
-    $stmt = $pdo->prepare("SELECT id, mot_de_passe FROM utilisateurs WHERE email = ?");
-    $stmt->execute([$email]);
-    $user = $stmt->fetch();
-
-    // Vérification du mot de passe
-    if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
-        $_SESSION['user_id'] = $user['id'];  // Stocker l'ID en session
-        header("Location: ../HTML/dashboard.html");  // Redirection vers le dashboard
-        exit();
+    if ($check->rowCount() > 0) {
+        echo "Cet email est déjà utilisé.";
     } else {
-        echo "Identifiants incorrects.";
+        // Insertion
+        $sql = "INSERT INTO utilisateurs (email, mot_de_passe, pseudo, nom, prenom, date_naissance, adresse_postale, role)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$email, $mot_de_passe, $pseudo, $nom, $prenom, $date_naissance, $adresse_postale, $role]);
+
+        echo "Inscription réussie !";
+
+        // Redirection en fonction du rôle
+        session_start();
+        $_SESSION['role'] = $role;
+
+        switch ($role) {
+            case "Agent":
+                header("Location: ../HTML/agent.html");
+                break;
+            case "Etudiant":
+                header("Location: ../HTML/etudiant.html");
+                break;
+            case "Professeur":
+                header("Location: ../HTML/enseignant.html");
+                break;
+            case "admin":
+                header("Location: ../HTML/admin.html");
+                break;
+            default:
+                header("Location: ../HTML/index.html");
+        }
+        exit();
     }
 } else {
-    echo "Veuillez remplir tous les champs.";
+    echo "Tous les champs sont obligatoires.";
 }
 ?>

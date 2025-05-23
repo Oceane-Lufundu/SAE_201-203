@@ -35,6 +35,14 @@
     text-decoration: none;
     color: white !important;
 }
+  
+.text h1 {
+color: white;
+margin: 0;
+font-size: 24px;
+text-align: center;
+
+}
 
 /* Logo */
 .logo {
@@ -42,7 +50,7 @@
     height: auto;
     flex: 1;
     display: flex;
-    justify-content: center;
+  
 }
 
 .Envoi{
@@ -81,3 +89,54 @@
 .jpp button:hover {
     background-color: #0056b3;
 }
+/*test*/
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+header {
+  background-color: #0077cc;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 0;
+  background-color: #0077cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #eee;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.no-res {
+  color: gray;
+  font-style: italic;
+}
+
