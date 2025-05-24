@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Connexion à la base de données
 $host = "localhost";
 $dbname = "sae_203";
@@ -12,57 +14,47 @@ try {
     die("Erreur de connexion : " . $e->getMessage());
 }
 
-// Vérifier que toutes les données du formulaire sont présentes
-if (
-    isset($_POST['email'], $_POST['pseudo'], $_POST['nom'], $_POST['prenom'],
-    $_POST['date_naissance'], $_POST['adresse_postale'], $_POST['role'], $_POST['mot_de_passe'])
-) {
-    $email = $_POST['email'];
-    $pseudo = $_POST['pseudo'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $date_naissance = $_POST['date_naissance'];
-    $adresse_postale = $_POST['adresse_postale'];
+// Vérification des champs du formulaire
+if (isset($_POST['Identifiant'], $_POST['mot_de_passe'], $_POST['role'])) {
+    $email = $_POST['Identifiant'];
+    $mot_de_passe = $_POST['mot_de_passe'];
     $role = $_POST['role'];
-    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hash du mot de passe
 
-    // Vérifier si l'email existe déjà
-    $check = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = ?");
-    $check->execute([$email]);
+    // Requête pour trouver l'utilisateur correspondant
+    $stmt = $pdo->prepare("SELECT * FROM utilisateurs WHERE email = ? AND role = ?");
+    $stmt->execute([$email, $role]);
 
-    if ($check->rowCount() > 0) {
-        echo "Cet email est déjà utilisé.";
-    } else {
-        // Insertion
-        $sql = "INSERT INTO utilisateurs (email, mot_de_passe, pseudo, nom, prenom, date_naissance, adresse_postale, role)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    if ($stmt->rowCount() > 0) {
+        $utilisateur = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$email, $mot_de_passe, $pseudo, $nom, $prenom, $date_naissance, $adresse_postale, $role]);
+        // Vérification du mot de passe
+        if (password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
+            $_SESSION['utilisateur_id'] = $utilisateur['id'];
+            $_SESSION['role'] = $utilisateur['role'];
 
-        echo "Inscription réussie !";
-
-        // Redirection en fonction du rôle
-        session_start();
-        $_SESSION['role'] = $role;
-
-        switch ($role) {
-            case "Agent":
-                header("Location: ../HTML/agent.html");
-                break;
-            case "Etudiant":
-                header("Location: ../HTML/etudiant.html");
-                break;
-            case "Professeur":
-                header("Location: ../HTML/enseignant.html");
-                break;
-            case "admin":
-                header("Location: ../HTML/admin.html");
-                break;
-            default:
-                header("Location: ../HTML/index.html");
+            // Redirection selon le rôle
+            switch ($role) {
+                case "Agent":
+                    header("Location: ../HTML/agent.html");
+                    break;
+                case "Etudiant":
+                    header("Location: ../HTML/etudiant.html");
+                    break;
+                case "Professeur":
+                    header("Location: ../HTML/enseignant.html");
+                    break;
+                case "admin":
+                    header("Location: ../HTML/admin.html");
+                    break;
+                default:
+                    header("Location: ../HTML/index.html");
+            }
+            exit();
+        } else {
+            echo "Mot de passe incorrect.";
         }
-        exit();
+    } else {
+        echo "Identifiant ou rôle incorrect.";
     }
 } else {
     echo "Tous les champs sont obligatoires.";
