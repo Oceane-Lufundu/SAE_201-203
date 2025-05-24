@@ -24,8 +24,8 @@
     padding: 2%;
     background-color: #0F273B;
 }
-
-.nav_agent {
+/* Nav  Agent */
+.bandeau1 {
     list-style: none;
     display: flex;
     align-items: center;
