@@ -1,0 +1,83 @@
+/* page Index */
+/* index background */
+.index {
+    background-color: #B8DAEE;
+}
+
+.formulaire {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 90%;
+    margin-top: 10%;
+}
+
+/* Nav Bar */
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    background-color: #0F273B;
+}
+
+.nav-item {
+    text-align: center;
+    margin: auto;
+    font-size: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white !important;
+}
+
+/* Logo */
+.logo {
+    max-width: 200px;
+    height: auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.Envoi{
+         margin-left:580px;
+          
+}
+/* Boîte du formulaire */
+.jpp {
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid;
+    padding: 35px;
+    width: 45%;
+    margin: 70px auto;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+}
+
+/* Champs TD/TP cachés par défaut */
+.sous-role {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Bouton centré */
+.jpp button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.jpp button:hover {
+    background-color: #0056b3;
+}
