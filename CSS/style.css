@@ -24,6 +24,15 @@
     padding: 2%;
     background-color: #0F273B;
 }
+/* Nav  Agent */
+.bandeau1 {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    background-color: #c20b0b;
+}
 
 .nav-item {
     text-align: center;
