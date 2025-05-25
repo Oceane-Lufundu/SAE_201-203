@@ -8,7 +8,54 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<h1> welcome to Dashboard enseignant</h1>
+<header class="bandeau2">
+    <h1>Bienvenue sur votre espace enseignant</h1>
+</header>
+
+<div class="container">
+    <h2>Mes Réservations</h2>
     
+    <!-- Lien vers la page de réservation -->
+    <a class="button btn btn-primary mb-3" href="../HTML/resa_salle.html">Réserver une salle</a>
+
+    <!-- Liste des réservations -->
+    <ul id="liste-reservations" class="list-group"></ul>
+</div>
+
+<script>
+    const liste = document.getElementById('liste-reservations');
+    let reservations = JSON.parse(localStorage.getItem('mes_reservations')) || [];
+
+    function afficherReservations() {
+        liste.innerHTML = '';
+
+        if (reservations.length === 0) {
+            liste.innerHTML = '<li class="list-group-item text-muted">Aucune réservation pour le moment.</li>';
+        } else {
+            reservations.forEach((res, index) => {
+                const li = document.createElement('li');
+                li.className = 'list-group-item d-flex justify-content-between align-items-center';
+
+                li.innerHTML = `
+                    <span>Réservation ${index + 1} - ${res}</span>
+                    <button class="btn btn-danger btn-sm" onclick="supprimerReservation(${index})">Supprimer</button>
+                `;
+
+                liste.appendChild(li);
+            });
+        }
+    }
+
+    function supprimerReservation(index) {
+        if (confirm("Voulez-vous vraiment supprimer cette réservation ?")) {
+            reservations.splice(index, 1);
+            localStorage.setItem('mes_reservations', JSON.stringify(reservations));
+            afficherReservations();
+        }
+    }
+
+    // Affiche les réservations au chargement
+    afficherReservations();
+</script>
 </body>
 </html>

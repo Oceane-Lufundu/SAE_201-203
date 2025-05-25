@@ -141,3 +141,10 @@ li {
   font-style: italic;
 }
 
+/* nav enseignant */
+.bandeau2{
+  background-color: #005E55;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
