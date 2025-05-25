@@ -150,9 +150,25 @@ li {
   font-style: italic;
 }
 
+/* nav Agent */
+.bandeau1{
+  background-color: #C20B0B;
+  color: white;
+  padding: 20px;
+  text-align: center;
+} 
+
 /* nav enseignant */
 .bandeau2{
   background-color: #005E55;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* nav admin */
+.bandeau3{
+  background-color: #d8b816;
   color: white;
   padding: 20px;
   text-align: center;

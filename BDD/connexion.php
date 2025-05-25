@@ -44,7 +44,7 @@ if (isset($_POST['Identifiant'], $_POST['mot_de_passe'], $_POST['role'])) {
                     header("Location: ../HTML/enseignant.html");
                     break;
                 case "admin":
-                    header("Location: ../HTML/admin.html");
+                    header("Location: ../BDD/admin_view.php");
                     break;
                 default:
                     header("Location: ../HTML/index.html");
