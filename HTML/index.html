@@ -25,19 +25,19 @@
             <label for="role">Rôle :</label>
             <select id="role" name="role" required onchange="afficherEtudiantOptions()">
                 <option value=""></option>
-                <option value="Agent">Agent</option>
-                <option value="Etudiant">Etudiant</option>
-                <option value="Professeur">Professeur</option>
-                <option value="admin">Administrateur</option>
+                <option value="agent">Agent</option>
+                <option value="etudiant">Etudiant</option>
+                <option value="enseignant">Enseignant</option>
+                <option value="administrateur">Administrateur</option>
             </select><br><br>
 
             <!-- Options pour Etudiant -->
             <div id="etudiant-options" class="sous-role">
                 <label for="td">TD :</label>
-                <input type="text" id="td" name="td"><br><br>
+                <input type="text" id="td" name="td" required><br><br>
 
                 <label for="tp">TP :</label>
-                <input type="text" id="tp" name="tp"><br><br>
+                <input type="text" id="tp" name="tp" required><br><br>
             </div>
 
             <button type="submit">Connexion</button>
@@ -55,7 +55,7 @@
             const role = document.getElementById("role").value;
             const etudiantOptions = document.getElementById("etudiant-options");
 
-            if (role === "Etudiant") {
+            if (role === "etudiant") {
                 etudiantOptions.style.display = "block";
             } else {
                 etudiantOptions.style.display = "none";
