@@ -1,3 +1,4 @@
+<?php
 function reserverSalleEtMateriel($nom, $prenom, $email, $date_acces, $heure_acces, $heure_remise, $projet, $salle, $materiel, $role) {
     $host = "localhost";
     $dbname = "sae_203";

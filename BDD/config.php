@@ -1,7 +1,7 @@
 <?php
 // Informations de connexion à la base de données
 $host = "localhost";
-$dbname = "sae203";
+$dbname = "sae_203";
 $username = "root";
 $password = ""; // ou ton mot de passe
 
