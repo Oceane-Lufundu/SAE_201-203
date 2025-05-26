@@ -79,6 +79,7 @@ if (!empty($_POST['Identifiant']) && !empty($_POST['mot_de_passe']) && !empty($_
 
         // Vérification du mot de passe haché
         if (password_verify($mot_de_passe, $utilisateur['mot_de_passe'])) {
+
             // Stocker en session et rediriger selon le rôle
             $_SESSION['utilisateur_id'] = $utilisateur['id'];
             $_SESSION['role']           = $utilisateur['role'];
@@ -110,7 +111,3 @@ if (!empty($_POST['Identifiant']) && !empty($_POST['mot_de_passe']) && !empty($_
             echo "<p style='color: red;'>Erreur : Mot de passe incorrect.</p>";
         }
     }
-} else {
-    echo "<p style='color: red;'>Tous les champs sont obligatoires.</p>";
-}
-?>
