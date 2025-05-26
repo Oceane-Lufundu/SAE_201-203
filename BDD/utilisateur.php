@@ -23,8 +23,8 @@ if (
     $prenom = $_POST['prenom'];
     $date_naissance = $_POST['date_naissance'];
     $adresse_postale = $_POST['adresse_postale'];
-    $role = $_POST['role'];
-    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT); // Hash du mot de passe
+    $role = $_POST['role']; // Doit être : Etudiant, Enseignant, Agent ou Administrateur
+    $mot_de_passe = password_hash($_POST['mot_de_passe'], PASSWORD_DEFAULT);
 
     // Vérifier si l'email existe déjà
     $check = $pdo->prepare("SELECT id FROM utilisateurs WHERE email = ?");
@@ -41,7 +41,7 @@ if (
         $stmt->execute([$email, $mot_de_passe, $pseudo, $nom, $prenom, $date_naissance, $adresse_postale, $role]);
 
         echo "Inscription réussie !";
-        header("Location: ../HTML/index.html"); // redirection vers la page de connecion
+        header("Location: ../HTML/index.html");
         exit();
     }
 } else {

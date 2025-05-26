@@ -7,6 +7,8 @@ $dbname = "sae_203";
 $username = "root";
 $password = "";
 
+
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -40,10 +42,10 @@ if (isset($_POST['Identifiant'], $_POST['mot_de_passe'], $_POST['role'])) {
                 case "Etudiant":
                     header("Location: ../HTML/etudiant.html");
                     break;
-                case "Professeur":
+                case "Enseignant":
                     header("Location: ../HTML/enseignant.html");
                     break;
-                case "admin":
+                case "Administrateur":
                     header("Location: ../HTML/admin.html");
                     break;
                 default:
