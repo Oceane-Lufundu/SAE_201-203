@@ -12,6 +12,7 @@
         <h1>Bienvenue sur votre espace administrateur</h1>
     </header>
     <div style="height: 50px;"></div>
+    <?php include("../BDD/admin_action.php"); ?>
 
 <!--Utilisateur-->
     <h2>Gestion des utilisateurs</h2>

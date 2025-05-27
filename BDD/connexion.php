@@ -111,3 +111,4 @@ if (!empty($_POST['Identifiant']) && !empty($_POST['mot_de_passe']) && !empty($_
             echo "<p style='color: red;'>Erreur : Mot de passe incorrect.</p>";
         }
     }
+}

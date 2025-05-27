@@ -10,7 +10,7 @@ function reserverSalleEtMateriel($nom, $prenom, $numero_etudiant, $email, $date_
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // Insérer la réservation en base de données
-        $sql = "INSERT INTO reservations (nom, prenom, numero_etudiant, email, date_reservation, heure_remise, nom_projet, enseignant_responsable, materiel, statut) 
+        $sql = "INSERT INTO resaMateriel (nom, prenom, numero_etudiant, email_universitaire, date_reservation, heure_remise, nom_projet, enseignant_responsable, materiel, statut) 
                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'en attente')";
 
         $stmt = $conn->prepare($sql);

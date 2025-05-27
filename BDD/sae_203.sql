@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 20 mai 2025 à 12:27
+-- Généré le : mar. 27 mai 2025 à 02:09
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -18,53 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `sae203`
+-- Base de données : `sae_203`
 --
-
--- --------------------------------------------------------
-
---
--- Structure de la table `administrateur`
---
-
-CREATE TABLE `administrateur` (
-  `id_utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `agents`
---
-
-CREATE TABLE `agents` (
-  `id_utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `enseignants`
---
-
-CREATE TABLE `enseignants` (
-  `id_utilisateur` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `etudiants`
---
-
-CREATE TABLE `etudiants` (
-  `id_utilisateur` int(11) NOT NULL,
-  `num_etudiant` int(6) DEFAULT NULL,
-  `num_tel` int(11) DEFAULT NULL,
-  `groupe_tp` varchar(1) DEFAULT NULL,
-  `groupe_td` int(1) DEFAULT NULL,
-  `promotion` varchar(5) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -84,6 +39,34 @@ CREATE TABLE `materiel` (
   `descriptif` text DEFAULT NULL,
   `lien_demo` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `resamateriel`
+--
+
+CREATE TABLE `resamateriel` (
+  `id` int(11) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `numero_etudiant` int(11) NOT NULL,
+  `email_universitaire` varchar(255) DEFAULT NULL,
+  `date_reservation` date NOT NULL,
+  `heure_remise` time DEFAULT NULL,
+  `nom_projet` varchar(255) DEFAULT NULL,
+  `quantite` int(11) NOT NULL DEFAULT 1,
+  `enseignant_responsable` varchar(255) DEFAULT NULL,
+  `materiel` text DEFAULT NULL,
+  `statut` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `resamateriel`
+--
+
+INSERT INTO `resamateriel` (`id`, `nom`, `prenom`, `numero_etudiant`, `email_universitaire`, `date_reservation`, `heure_remise`, `nom_projet`, `quantite`, `enseignant_responsable`, `materiel`, `statut`) VALUES
+(1, 'Lufundu', 'Océane', 289746, 'oceane.lufundu@edu.univ-eiffel.fr', '2025-05-28', '14:01:00', 'sae202', 1, 'Peronne', 'PC de Bureau (1), Casque Oculus Quest 2 (1)', 'en attente');
 
 -- --------------------------------------------------------
 
@@ -124,42 +107,27 @@ CREATE TABLE `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id`, `email`, `pseudo`, `nom`, `prenom`, `date_naissance`, `adresse_postale`, `role`, `mot_de_passe`) VALUES
-(1, 'jeremy123wamy@gmail.com', 'pseudoTest', 'NomTest', 'PrenomTest', '2000-01-01', 'Adresse Test', 'étudiant', 'testrjfkz'),
-(2, 'paradisjeremy64@gmail.com', 'pseudoTest', 'NomTest', 'PrenomTest', '2000-01-01', 'Adresse Test', 'étudiant', 'gugughiohi');
+(3, 'oceane.lufundu@edu.univ-eiffel.fr', 'Océane', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'enseignant', '$2y$10$G6gzYOespY9dkt/gGfLRl.yfeQogSXnu0j6lB68ZrSX.CYd5Ji0wC'),
+(4, 'lufundu.oceane@gmail.com', 'Océane', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'agent', '$2y$10$8d/lTKNpxeiYazXLhHYCJuYLKu1bEOid6pE87Eb8pP6mfLOsaIxdG'),
+(5, 'oceane.lfnd@gmail.com', 'Océane', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'étudiant', '$2y$10$tEbiX3.b8VsJt3aaGAt1JOZflLZCMLqAqOxOOx7f08xbN3IAmzL.2'),
+(6, 'lenygerance@gmail.com', 'Babe', 'Gérance', 'Lény', '2003-11-27', '33 rue xavier bichard', 'enseignant', '$2y$10$TGfLr5WEBLKcVcHWsXqn2O/bVlFdkInjCHvBr9L6/sxlQIdCDKRIa'),
+(7, 'oceanelufundu@hotmail.com', 'Babe', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'administrateur', '$2y$10$S90QOdwQWqqxr4JEHhaosOkU5S3njAfXnkvWPwuY2Gf1hTVCpJmkO');
 
 --
 -- Index pour les tables déchargées
 --
 
 --
--- Index pour la table `administrateur`
---
-ALTER TABLE `administrateur`
-  ADD PRIMARY KEY (`id_utilisateur`);
-
---
--- Index pour la table `agents`
---
-ALTER TABLE `agents`
-  ADD PRIMARY KEY (`id_utilisateur`);
-
---
--- Index pour la table `enseignants`
---
-ALTER TABLE `enseignants`
-  ADD PRIMARY KEY (`id_utilisateur`);
-
---
--- Index pour la table `etudiants`
---
-ALTER TABLE `etudiants`
-  ADD PRIMARY KEY (`id_utilisateur`);
-
---
 -- Index pour la table `materiel`
 --
 ALTER TABLE `materiel`
   ADD PRIMARY KEY (`id_materiel`);
+
+--
+-- Index pour la table `resamateriel`
+--
+ALTER TABLE `resamateriel`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `reservations`
@@ -186,6 +154,12 @@ ALTER TABLE `materiel`
   MODIFY `id_materiel` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `resamateriel`
+--
+ALTER TABLE `resamateriel`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `reservations`
 --
 ALTER TABLE `reservations`
@@ -195,35 +169,11 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `administrateur`
---
-ALTER TABLE `administrateur`
-  ADD CONSTRAINT `administrateur_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `agents`
---
-ALTER TABLE `agents`
-  ADD CONSTRAINT `agents_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `enseignants`
---
-ALTER TABLE `enseignants`
-  ADD CONSTRAINT `enseignants_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE;
-
---
--- Contraintes pour la table `etudiants`
---
-ALTER TABLE `etudiants`
-  ADD CONSTRAINT `etudiants_ibfk_1` FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateurs` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `reservations`
