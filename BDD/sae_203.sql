@@ -61,6 +61,16 @@ CREATE TABLE `resamateriel` (
   `statut` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< HEAD
+=======
+--
+-- Déchargement des données de la table `resamateriel`
+--
+
+INSERT INTO `resamateriel` (`id`, `nom`, `prenom`, `numero_etudiant`, `email_universitaire`, `date_reservation`, `heure_remise`, `nom_projet`, `quantite`, `enseignant_responsable`, `materiel`, `statut`) VALUES
+(1, 'Lufundu', 'Océane', 289746, 'oceane.lufundu@edu.univ-eiffel.fr', '2025-05-28', '14:01:00', 'sae202', 1, 'Peronne', 'PC de Bureau (1), Casque Oculus Quest 2 (1)', 'en attente');
+
+>>>>>>> 946537cd9ce075bd170a43045118f8d4f8661557
 -- --------------------------------------------------------
 
 --
@@ -96,6 +106,20 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+<<<<<<< HEAD
+=======
+-- Déchargement des données de la table `utilisateurs`
+--
+
+INSERT INTO `utilisateurs` (`id`, `email`, `pseudo`, `nom`, `prenom`, `date_naissance`, `adresse_postale`, `role`, `mot_de_passe`) VALUES
+(3, 'oceane.lufundu@edu.univ-eiffel.fr', 'Océane', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'enseignant', '$2y$10$G6gzYOespY9dkt/gGfLRl.yfeQogSXnu0j6lB68ZrSX.CYd5Ji0wC'),
+(4, 'lufundu.oceane@gmail.com', 'Océane', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'agent', '$2y$10$8d/lTKNpxeiYazXLhHYCJuYLKu1bEOid6pE87Eb8pP6mfLOsaIxdG'),
+(5, 'oceane.lfnd@gmail.com', 'Océane', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'étudiant', '$2y$10$tEbiX3.b8VsJt3aaGAt1JOZflLZCMLqAqOxOOx7f08xbN3IAmzL.2'),
+(6, 'lenygerance@gmail.com', 'Babe', 'Gérance', 'Lény', '2003-11-27', '33 rue xavier bichard', 'enseignant', '$2y$10$TGfLr5WEBLKcVcHWsXqn2O/bVlFdkInjCHvBr9L6/sxlQIdCDKRIa'),
+(7, 'oceanelufundu@hotmail.com', 'Babe', 'Lufundu', 'Océane', '2003-06-23', '12 Rue Robert Schuman', 'administrateur', '$2y$10$S90QOdwQWqqxr4JEHhaosOkU5S3njAfXnkvWPwuY2Gf1hTVCpJmkO');
+
+--
+>>>>>>> 946537cd9ce075bd170a43045118f8d4f8661557
 -- Index pour les tables déchargées
 --
 
